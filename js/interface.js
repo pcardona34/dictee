@@ -71,7 +71,8 @@ var dictee = new oDictee();
 				source_audio += "<source src=\"media/" + dictee.audio + ".ogg\"></source>";
 				source_audio += "</audio>";
 			}else{
-				source_audio ="<div class='erreur'>Votre navigateur n'est pas conforme. Veuillez utiliser Mozilla Firefox.</div>";	
+				source_audio ="<div class='erreur'>Votre navigateur n'est pas conforme. Veuillez utiliser ";
+				source_audio += "<a href='https://www.mozilla.org/fr/firefox/'>Mozilla Firefox</a>.</div>";	
 			}
 			
 			

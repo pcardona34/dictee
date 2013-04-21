@@ -1,7 +1,7 @@
 /* Test navigateur */
 
 function testNavigateur(){
-var nav = "aucun";
+var nav = navigator.appName;
 
 if (nav == 'Netscape') {
 	return true;
