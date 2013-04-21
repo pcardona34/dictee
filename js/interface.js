@@ -67,7 +67,6 @@ var dictee = new oDictee();
 			var source_audio = "";
 			if(testNavigateur()){
 				source_audio = "<audio class=\"audio\" controls>";
-				/*source_audio += "<source src=\"media/" + dictee.audio + ".mp3\"></source>";*/
 				source_audio += "<source src=\"media/" + dictee.audio + ".ogg\"></source>";
 				source_audio += "</audio>";
 			}else{
