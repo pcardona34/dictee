@@ -3,7 +3,7 @@
 function testNavigateur(){
 var nav = "aucun";
 
-if (nav == 'Netscape2') {
+if (nav == 'Netscape') {
 	return true;
 }
 }
