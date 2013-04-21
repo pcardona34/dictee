@@ -216,4 +216,14 @@ input[type="submit"], a[title="donnees"]{
 	0px 2px 2px 0px rgba(255, 255, 255, 0.5);
 }
 
+.erreur {
+	padding:0.5em;
+	background-color:#FFC0CB;
+	color:red;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
 

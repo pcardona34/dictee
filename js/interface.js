@@ -60,13 +60,21 @@ var dictee = new oDictee();
 			$("#ouvrage").html( dictee.ouvrage );
 			$("#auteur").html( dictee.auteur );
 			
+			
 			/*
  			* Lecteur multimédia HTML5
  			*/
-			var source_audio = "<audio class=\"audio\" controls>";
-			/*source_audio += "<source src=\"media/" + dictee.audio + ".mp3\"></source>";*/
-    		source_audio += "<source src=\"media/" + dictee.audio + ".ogg\"></source>";
-    		source_audio += "</audio>";
+			var source_audio = "";
+			if(testNavigateur()){
+				source_audio = "<audio class=\"audio\" controls>";
+				/*source_audio += "<source src=\"media/" + dictee.audio + ".mp3\"></source>";*/
+				source_audio += "<source src=\"media/" + dictee.audio + ".ogg\"></source>";
+				source_audio += "</audio>";
+			}else{
+				source_audio ="<div class='erreur'>Votre navigateur n'est pas conforme. Veuillez utiliser Mozilla Firefox.</div>";	
+			}
+			
+			
     		
     		$("#lecteur_audio").html(source_audio);
 	
