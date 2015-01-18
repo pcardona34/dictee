@@ -1,7 +1,7 @@
-/* 
+/*
  * interface.js
- * 
- * ( c ) 2012 Patrick Cardona
+ *
+ * ( c ) 2012-2015 Patrick Cardona
  * Dicto version 1.1.0
  * Gestion des événements de l'interface
  *
@@ -11,10 +11,10 @@
 /* LICENCE
 /* =================================================================== */
 /*
-@licstart  The following is the entire license notice for the 
+@licstart  The following is the entire license notice for the
     JavaScript code in this page.
 
-Copyright (C) 2012  Patrick CARDONA - A propos
+Copyright (C) 2012-2015  Patrick CARDONA - A propos
 
     The JavaScript code in this page is free software: you can
     redistribute it and/or modify it under the terms of the GNU
@@ -29,9 +29,9 @@ Copyright (C) 2012  Patrick CARDONA - A propos
     that code without the copy of the GNU GPL normally required by
     section 4, provided you include this license notice and a URL
     through which recipients can access the Corresponding Source.
-    
+
 @licend  The above is the entire license notice
-    for the JavaScript code in this page.    
+    for the JavaScript code in this page.
 */
 
 // On définit une variable globale pour la position du curseur dans le texte
@@ -52,15 +52,15 @@ var dictee = new oDictee();
 			dictee.auteur = data.auteur;
 			dictee.ouvrage = data.ouvrage;
 			dictee.audio = data.audio;
-			
+
 			// On actualise les étiquettes à afficher dans l'interface
 			$("#titre_principal").html( dictee.titre );
 			$("#prof").append( dictee.prof );
 			$("#titre_lecture").html( dictee.audio );
 			$("#ouvrage").html( dictee.ouvrage );
 			$("#auteur").html( dictee.auteur );
-			
-			
+
+
 			/*
  			* Lecteur multimédia HTML5
  			*/
@@ -71,16 +71,16 @@ var dictee = new oDictee();
 				source_audio += "</audio>";
 			}else{
 				source_audio ="<div class='erreur'>Votre navigateur n'est pas conforme. Veuillez utiliser ";
-				source_audio += "<a href='https://www.mozilla.org/fr/firefox/'>Mozilla Firefox</a>.</div>";	
+				source_audio += "<a href='https://www.mozilla.org/fr/firefox/'>Mozilla Firefox</a>.</div>";
 			}
-			
-			
-    		
+
+
+
     		$("#lecteur_audio").html(source_audio);
-	
-			
-            
-        
+
+
+
+
 		}
 		else{
 			jAlert("<p>Une erreur s'est produite : le fichier de données n'est pas conforme.")
@@ -88,7 +88,7 @@ var dictee = new oDictee();
 	});
 
 $(document).ready(function(){
-	
+
 	/*
 	 * Etat de l'interface par défaut :
 	 */
@@ -98,7 +98,7 @@ $(document).ready(function(){
 	$("#section_3").hide();
 	// On masque le bouton recommencer
 	$("#section_4").hide();
-	
+
 
 	// Animation de l'écran d'accueil
 /* Désactivation de l'animation - début
@@ -119,7 +119,7 @@ $("#accueil").fadeIn(2000, function() {
     						$(this).fadeOut(500);
 							}
 						});
-				
+
 					}
 			});
 });
@@ -127,17 +127,17 @@ Désactivation - fin */
 
 	// Caractères spéciaux
 	$(".spec").click(function(){
-			var carspec = $(this).text();			
+			var carspec = $(this).text();
 			insertion(carspec);
 			e.preventDefault();
 		});
-	
+
 	// Aide contextuelle
 	$(".aide").click(function(e){
 			jAlert ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.","Aide : insertion de caractères");
 			e.preventDefault();
 		});
-		
+
 	/*
 	 * Licence
 	 */
@@ -145,12 +145,12 @@ Désactivation - fin */
 		jAlert(lic,"Licence");
 		e.preventDefault();
 	});
-	
-	// Gestion des boutons 
+
+	// Gestion des boutons
 	$("input:submit").click(function(e){
 		var instruction = $(this).val();
 		switch ( instruction ){
-			
+
 			case "Corriger la dictée":
 				dictee.saisie = $("#dictee").val();
 				if(dictee.saisie.length > 0){
@@ -160,14 +160,14 @@ Désactivation - fin */
 						$("#section_2").show();
 						$("#section_1").hide();
 						$("#section_1_bis").hide();
-						$("#section_4").show();	
+						$("#section_4").show();
 					}
 				}else{
 					jAlert("Veuillez d'abord saisir le texte de votre dictée.","Erreur : aucun texte saisi");
 					return false;
 				}
 			break;
-			
+
 			case "Afficher la solution":
 				$("#solution").html( dictee.affiche() );
 				$("#section_3").show();
@@ -176,7 +176,7 @@ Désactivation - fin */
 				$("#section_2").hide();
 				$("#section_4").show();
 			break;
-			
+
 			case "Recommencer":
 				jConfirm('Voulez-vous vraiment tout recommencer ?', 'Recommencer ?', function(r) {
 					if(r){
@@ -187,9 +187,9 @@ Désactivation - fin */
 						$("#section_1").show();
 						$("#section_1_bis").show();
 					}
-				});	
+				});
 			break;
-			
+
 			case "Reprendre":
 				$("#section_2").hide();
 				$("#section_3").hide();
@@ -197,9 +197,9 @@ Désactivation - fin */
 				$("#section_1").show();
 				$("#section_1_bis").show();
 			break;
-			
+
 			default:
-			jAlert ( "Aucune action définie !");	
+			jAlert ( "Aucune action définie !");
 		}
 		e.preventDefault(); // pour empêcher la soumission effective du formulaire.
 	});
