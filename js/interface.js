@@ -99,7 +99,9 @@ $(document).ready(function(){
 	// On masque le bouton recommencer
 	$("#section_4").hide();
 	
+
 	// Animation de l'écran d'accueil
+/* Désactivation de l'animation - début
 $("#accueil").hide();
 $("#accueil").fadeIn(2000, function() {
 	$(this).animate(
@@ -121,6 +123,7 @@ $("#accueil").fadeIn(2000, function() {
 					}
 			});
 });
+Désactivation - fin */
 
 	// Caractères spéciaux
 	$(".spec").click(function(){
