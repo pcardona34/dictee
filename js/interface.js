@@ -43,7 +43,9 @@ function obtenirParametre (sVar) {
 }
 
 var numero = obtenirParametre("numero");
-
+if (!numero) {
+	alert("Syntaxe : http://votre_serveur/dictee/dictee.html?numero=54 pour charger la dictée 54.");
+}
 
 /* ***************************************** */
 /*
