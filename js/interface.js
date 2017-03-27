@@ -51,7 +51,7 @@ var numero = obtenirParametre("numero");
  */
 var dictee = new oDictee();
 // On charge les données de cet exercice à partir du fichier data.json
-	$.getJSON('json/' + numero + '.json', function(data) {
+	$.getJSON('json/dictee' + numero + '.json', function(data) {
 		if(data.app_name == "jDicto"){
 			dictee.prof = data.prof;
 			dictee.titre = data.titre;
