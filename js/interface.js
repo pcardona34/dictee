@@ -37,6 +37,13 @@ Copyright (C) 2012-2015  Patrick CARDONA - A propos
 // On définit une variable globale pour la position du curseur dans le texte
 var position = 0;
 
+// Récupération du paramètre "numero" : d'après MSDN
+function obtenirParametre (sVar) {
+  return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+}
+
+var numero = obtenirParametre("numero");
+
 
 /* ***************************************** */
 /*
@@ -44,7 +51,7 @@ var position = 0;
  */
 var dictee = new oDictee();
 // On charge les données de cet exercice à partir du fichier data.json
-	$.getJSON('data.json', function(data) {
+	$.getJSON('json/' + numero + '.json', function(data) {
 		if(data.app_name == "jDicto"){
 			dictee.prof = data.prof;
 			dictee.titre = data.titre;
