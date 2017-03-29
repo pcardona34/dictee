@@ -42,7 +42,7 @@ body {
 }*/
 
 header {
-	padding: 0.2em;
+	/*padding: 0.2em;*/
 	padding-left: 0.5em;
 	/*margin-left:0,2em;*/
 	/*margin-right:2em;*/
@@ -97,8 +97,8 @@ h1 {
 }
 
 h2 {
-	color:#66CCFF;
-	font-size:1.1em;	
+	color:#5AA2DE;
+	font-size:1em;	
 }
 
 #titre_principal {
