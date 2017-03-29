@@ -37,9 +37,9 @@ body {
 }
 
 
-#accueil{
+/*#accueil{
 	text-align: left;
-}
+}*/
 
 header {
 	padding:0.1em;
@@ -104,8 +104,8 @@ h2 {
 }
 
 #titre_principal {
-	color:#666666;
-	text-align:center;	
+	color: white;
+	text-align:left;	
 }
 
 /*#bib {
