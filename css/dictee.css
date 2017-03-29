@@ -42,12 +42,13 @@ body {
 }*/
 
 header {
-	padding:0.1em;
-	margin-left:2em;
+	padding-left:1,2em;
+	/*margin-left:0,2em;*/
 	/*margin-right:2em;*/
 	color: white;
 	background-color:#5AA2DE;
-	font-size:0.8em;
+	font-family:Arial,Helvetica,"Sans serif"; 
+	font-size:1em;
 	/*-moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
@@ -57,15 +58,11 @@ header {
 	0px 2px 2px 0px rgba(255, 255, 255, 0.5);*/	
 }
 
-/*#cadre_prof {
-	text-align:right;
-	margin-top:0.25em;
-	margin-right:4em;
-	margin-bottom:3em;
-	color:#66CCFF;
-	font-size: 0.8em;
-	font-weight: bold;	
-}*/
+#cadre_prof {
+	text-align:left;
+	font-size: 0.5em;
+	/*font-weight: bold;*/	
+}
 
 /*#cadre_bib {
 	text-align:center;
