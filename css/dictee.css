@@ -43,8 +43,9 @@ body {
 
 header {
 	padding:0.1em;
-	margin-left:2em;
-	margin-right:2em;
+	/*margin-left:2em;
+	margin-right:2em;*/
+	color: white;
 	background-color:#5AA2DE;
 	font-size:0.8em;
 	/*-moz-border-radius: 20px;
@@ -56,7 +57,7 @@ header {
 	0px 2px 2px 0px rgba(255, 255, 255, 0.5);*/	
 }
 
-#cadre_prof {
+/*#cadre_prof {
 	text-align:right;
 	margin-top:0.25em;
 	margin-right:4em;
@@ -64,12 +65,12 @@ header {
 	color:#66CCFF;
 	font-size: 0.8em;
 	font-weight: bold;	
-}
+}*/
 
-#cadre_bib {
+/*#cadre_bib {
 	text-align:center;
 	font-size:0,5em;
-}
+}*/
 
 section {
 	margin-left:3em;
