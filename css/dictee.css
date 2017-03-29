@@ -43,8 +43,8 @@ body {
 
 header {
 	padding:0.1em;
-	/*margin-left:2em;
-	margin-right:2em;*/
+	margin-left:2em;
+	/*margin-right:2em;*/
 	color: white;
 	background-color:#5AA2DE;
 	font-size:0.8em;
