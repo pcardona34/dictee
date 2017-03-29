@@ -38,7 +38,7 @@ body {
 
 
 #accueil{
-	text-align: center;
+	text-align: left;
 }
 
 header {
@@ -95,7 +95,7 @@ h1, h2 {
 }
 
 h1 {
-	font-size:1.4em;	
+	font-size:1.2em;	
 }
 
 h2 {
@@ -108,11 +108,11 @@ h2 {
 	text-align:center;	
 }
 
-#bib {
+/*#bib {
 	margin-left:2em;
 	font-size:1.2em;
 	color:#808080;
-}
+}*/
 
 #correction, #solution {
 	font-size:1.6em;
