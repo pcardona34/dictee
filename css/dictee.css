@@ -42,7 +42,7 @@ body {
 }*/
 
 header {
-	padding-left:1,2em;
+	padding-left: 1em;
 	/*margin-left:0,2em;*/
 	/*margin-right:2em;*/
 	color: white;
@@ -60,7 +60,7 @@ header {
 
 #cadre_prof {
 	text-align:left;
-	font-size: 0.5em;
+	font-size: 0.75em;
 	/*font-weight: bold;*/	
 }
 
