@@ -5,11 +5,9 @@
 		<meta charset="utf-8">
 		<title>Index des dictées</title>
 		
-		<!-- CSS partagée : dictée + générateur -->
-		<link href="lib/css/apropos.css" rel="stylesheet" type="text/css" />
-		<link href="lib/css/carspec.css" type="text/css" rel="stylesheet" />
-		<!-- CSS de la dictée -->
-		<link href="css/dictee.css" rel="stylesheet" type="text/css" />
+		<!-- CSS -->
+		<link href="css/degrade.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
 
 	</head>
 	
@@ -22,19 +20,37 @@
 		</div>
 	</header>
 	
-	<aside>
-		<div id="cadre_prof">
-			<div id="prof">&copy; Patrick Cardona</div>
-		</div>
-	</aside>
-	<section>
-		<div id="section_1">
-			<h2>Dictées en cinquième</h2>
-    <ul>
-      <li><a href="dictee.html?numero=54">Dictée n<sup>o</sup> 4</a></li>
-    </ul>
-    </div>
-      </section>
+	<div id="accordeons">
+    		
+    	<h3 id="titre_5e">Dictées en cinquième</h3>
+    	<div id="zone_5e" class="degrade">
+		
+			<ul>
+				<li><a href="dictee.html?numero=51">Dictée 51 : la rose</a></li>
+				<li><a href="dictee.html?numero=52">Dictée 52 : un comportement étrange</a></li>
+			</ul>
+		
+ 		</div>
+ 		
+ 		<h3 id="titre_3e">Dictées en troisième</h3>
+    	<div id="zone_3e" class="degrade">
+		
+			<ul>
+				<li><a href="dictee.html?numero=31">Dictée 31 : le cerf</a></li>
+				<li><a href="dictee.html?numero=32">Dictée 32 : le tourisme</a></li>
+			</ul>
+		
+ 		</div>
+      		
+	</div>
+	
+	
     
+      <footer>
+		
+			Dictées proposées par Patrick Cardona
+		
+	</footer>
+    <script src="js/accordeons.js"></script>
      </body>
 </html>

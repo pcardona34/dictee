@@ -1,8 +1,8 @@
 /*
  * dictee.css
  *  
- * ( c ) 2012-2013 Patrick Cardona
- * dictee de jDicto
+ * ( c ) 2012-2019 Patrick Cardona
+ * dictee de JDicto
  */
 
 /* =================================================================== */
@@ -12,7 +12,7 @@
 @licstart  The following is the entire license notice for the 
     CSS code in this page.
 
-Copyright (C) 2012  Patrick CARDONA - Dicto
+Copyright (C) 2012-2019 Patrick CARDONA - Dictee de JDicto
 
     The CSS code in this page is free software: you can
     redistribute it and/or modify it under the terms of the GNU
@@ -32,43 +32,27 @@ Copyright (C) 2012  Patrick CARDONA - Dicto
     for the CSS code in this page.    
 */
 
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
 body {
 	padding:0.5em;
 }
 
 
-/*#accueil{
-	text-align: left;
-}*/
-
 header {
-	/*padding: 0.2em;*/
-	padding-left: 0.5em;
-	/*margin-left:0,2em;*/
-	/*margin-right:2em;*/
+	padding: 0.3em;
+	padding-left: 1em;
 	color: white;
 	background-color:#5AA2DE;
 	font-family:Arial,Helvetica,"Sans serif"; 
 	font-size:1em;
-	/*-moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-    box-shadow:
-	0px 2px 2px 0px rgba(0, 0, 0, 0.5),
-	0px 2px 2px 0px rgba(255, 255, 255, 0.5);*/	
+	border-radius: 10px;
 }
 
 #cadre_prof {
 	text-align:left;
-	font-size: 0.75em;
-	/*font-weight: bold;*/	
-}
-
-/*#cadre_bib {
-	text-align:center;
-	font-size:0,5em;
-}*/
+	font-size: 1em;
+	}
 
 section {
 	margin-left:3em;
@@ -102,15 +86,10 @@ h2 {
 }
 
 #titre_principal {
+	padding-top: 0.5em;
 	color: white;
-	text-align:left;	
+	text-align:center;	
 }
-
-/*#bib {
-	margin-left:2em;
-	font-size:1.2em;
-	color:#808080;
-}*/
 
 #correction, #solution {
 	font-size:1.6em;
@@ -122,7 +101,8 @@ h2 {
 }
 
 #dictee {
-	font-size:1.2em;	
+	font-family: 'Pacifico', cursive;
+	font-size:1.3em;	
 }
 
 del {
@@ -147,13 +127,11 @@ ins {
 
 
 textarea, fieldset {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
 
 fieldset {
-	padding:1em;
+	padding:0.2em;
 		
 }
 
@@ -169,48 +147,11 @@ fieldset {
 	text-align:center;	
 }
 
-.reprendre {
-	padding-left:3.5em;
-	background-image:url("../img/reprendre.png");
-	background-repeat:no-repeat;
-}
-
-.recommencer {
-	padding-left:3.5em;
-	background-image:url("../img/recommencer.png");
-	background-repeat:no-repeat;
-}
-
-input[type="submit"]:hover, a[title="donnees"]:hover{
-	background-color:#1E90FF;
-}
-
-input[type="submit"], a[title="donnees"]{
-	background-color:#886699;
-	color:white;
-	font-size:0.9em;
-	padding-right:0.7em;
-	padding-top:0.7em;
-	padding-bottom:0.7em;
-	cursor: pointer;
-	border:none;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
-    box-shadow:
-	0px 2px 2px 0px rgba(0, 0, 0, 0.5),
-	0px 2px 2px 0px rgba(255, 255, 255, 0.5);   
-}
-
 .audio {
 	padding:1.5em;
 	background-color:#CCCCCC;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
-    box-shadow:
+	border-radius: 10px;
+	box-shadow:
 	0px 2px 2px 0px rgba(0, 0, 0, 0.5),
 	0px 2px 2px 0px rgba(255, 255, 255, 0.5);
 }
@@ -219,10 +160,7 @@ input[type="submit"], a[title="donnees"]{
 	padding:0.5em;
 	background-color:#FFC0CB;
 	color:red;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+	border-radius: 10px;
 }
 
 

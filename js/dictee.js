@@ -1,6 +1,6 @@
 /* Dicto : dictee.js
- ( c ) 2012 - Patrick Cardona
- Version 1.0
+ ( c ) 2012-2019 - Patrick Cardona
+ Version 2.0
  */
 
 /* =================================================================== */
@@ -10,7 +10,7 @@
 @licstart  The following is the entire license notice for the 
     JavaScript code in this page.
 
-Copyright (C) 2012  Patrick CARDONA - A propos
+Copyright (C) 2012-2019  Patrick CARDONA - A propos
 
     The JavaScript code in this page is free software: you can
     redistribute it and/or modify it under the terms of the GNU

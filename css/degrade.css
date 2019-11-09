@@ -1,0 +1,7 @@
+h3[id^="titre"]{
+	background: linear-gradient(white, silver);
+}
+
+.degrade {
+	background: linear-gradient(lemonchiffon, khaki);
+}

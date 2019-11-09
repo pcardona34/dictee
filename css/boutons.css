@@ -1,0 +1,17 @@
+
+
+input[type="submit"] {
+	background-color:rgb(92,184,92);
+	color:white;
+	margin:1em;
+	font-size:1.1em;
+	border-radius: 5px;
+    padding: 0.5em;
+    border: none;
+}
+
+
+input[type="submit"]:hover {
+	cursor:pointer;
+	background:linear-gradient(rgb(92,184,92), #7cc67c);
+}

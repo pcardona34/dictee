@@ -1,8 +1,8 @@
 /*
  * carspec.css
  *  
- * ( c ) 2012 Patrick Cardona
- * jDicto version : 1.0.0
+ * ( c ) 2012-2019 Patrick Cardona
+ * jDicto version : 2.0.0
  */
 
 /* =================================================================== */
@@ -36,10 +36,7 @@ Copyright (C) 2012  Patrick CARDONA - jDicto
 	margin-left:0.5em;
 	margin-bottom: 0.2em;
 	border: 2px #869 solid;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+	border-radius: 10px;
 }
 
 #table_spec caption, #table_spec_Dictee caption, #table_spec_Echo caption, #table_spec_BIS caption{
@@ -54,10 +51,7 @@ Copyright (C) 2012  Patrick CARDONA - jDicto
 	text-align:center;
 	background-color:#CCCCCC;
 	font-size:1em;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;	
+	border-radius: 10px;	
 }
 
 .spec:hover, .spec_Dictee:hover, .spec_Echo:hover, .spec_BIS:hover {
@@ -75,10 +69,7 @@ Copyright (C) 2012  Patrick CARDONA - jDicto
 	background-color:#886699;
 	color:white;
 	text-decoration:none;
-	-moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px;	
+	border-radius: 5px;	
 }
 
 .aide:hover{

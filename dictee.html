@@ -5,34 +5,12 @@
 		<meta charset="utf-8">
 		<title>Dictée</title>
 		
-		<!-- CSS liée aux dialogues -->
-		<link href="lib/css/jquery.alerts.css" rel="stylesheet" type="text/css" />
-		<!-- CSS partagée : dictée + générateur -->
-		<link href="lib/css/apropos.css" rel="stylesheet" type="text/css" />
+		<!-- CSS partagée : dictée -->
 		<link href="lib/css/carspec.css" type="text/css" rel="stylesheet" />
-		<!-- CSS de la dictée -->
 		<link href="css/dictee.css" rel="stylesheet" type="text/css" />
+		<link href="css/boutons.css" rel="stylesheet" type="text/css" />
 		
-		<script>
-		function insertion(car) {
-		var input = document.forms['formulaire'].elements['dictee'];
-		input.focus();
-  
-		if(typeof input.selectionStart != 'undefined')
-		{
-			/* Insertion du code */
-		var start = input.selectionStart;
-		var end = input.selectionEnd;
-		var insText = input.value.substring(start, end);
-		input.value = input.value.substr(0, start) + car + input.value.substr(end);
-			/* Ajustement de la position du curseur */
-		var pos;
-		pos = start + car.length;
-		input.selectionStart = pos;
-		input.selectionEnd = pos;
-		}
-		}
-		</script>
+		<script src="js/insertion.js"></script>
 	</head>
 	
 	<body>
@@ -44,19 +22,17 @@
 			Veuillez autoriser l'exécution de JavaScript ou employer un navigateur adapté.</p>
 	</noscript>
 	
-	<!-- Désactivation zone du logo
-	<div id="accueil">
-		<img src="img/jdicto.png" id="logo" alt="logo jDicto" />
-	</div>
-	Fin de la désactivation -->
-	
 	<!-- Corps de l'appli -->	
-	<header>
+
+<div id="conteneur">Veuillez patienter... La dictée se prépare...</div>
+
+<!-- Modèle -->
+<template id="modele">
+		<header>
 		<div>
-			<h1 id="titre_principal">Syntaxe : dictee.html?numero=54 pour charger la dictée 54</h1>
-		
-			<p id="cadre_prof">D'après <span id="auteur">un auteur anonyme</span>, <span id="ouvrage">?</span> |
-				<span id="prof">&copy;</span>
+			<h1 id="titre_principal"></h1>
+			<p id="cadre_prof">D'après <span id="auteur"></span>, <span id="ouvrage"></span> |
+				<span id="prof"></span>
 			</p>
 		</div>
 	</header>
@@ -67,7 +43,7 @@
 			<!-- Lecteur multimédia -->
 			<div id="lecteur_audio">
 				&nbsp;
-				<!-- ici, on ajoutera dynamiquement la source indiquée dans le fichier data.json -->
+				<!-- ici, on ajoutera dynamiquement la source indiquée dans le fichier dicteexx.json -->
 			</div>
 			
 		</div>
@@ -96,7 +72,7 @@
 			<form name="formulaire">
 				
 				<fieldset  id="ecrire">
-					<textarea id="dictee" name="dictee" cols="80" rows="10"></textarea>
+					<textarea id="dictee" name="dictee" cols="80" rows="7"></textarea>
 				</fieldset>
 				<br />
 				<input type="submit" value="Corriger la dictée" /> 
@@ -126,19 +102,23 @@
 			</form>
 		</div>
 	</section>
-
-<!-- Pied de page -->	
+	
+	<!-- Pied de page -->	
 	<footer>
-		Dictée réalisée au moyen de <a title="apropos" href="#">JDicto</a> - © 2012-2015 Patrick Cardona.
+		Dictée réalisée au moyen de <a title="apropos" href="#">JDicto</a> - © 2012-2019 Patrick Cardona.
 		&nbsp;| <a href="#" title="Licence" rel="jslicense">Licence</a>
 	</footer>
+    
+</template>
+	
+	
+	
+
 	
 	<!-- Optimisation : le code des lib javascript est chargé en fin de fichier -->
 	<!-- Lib JavaScript génériques ou partagées : dictée + générateur -->
 		<script src="js/navigateur.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-		<script src="lib/js/jquery.alerts.js"></script>
-					
+							
 		<!-- Lib liées à cette page -->
 		<script src="js/jsdiff.js"></script>
 		

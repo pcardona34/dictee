@@ -1,0 +1,67 @@
+
+body {
+	background-color: white;
+	font-size:12pt;
+}
+
+
+header {
+	margin-left:2em;
+	margin-right:2em;
+	padding: 0.3em;
+	padding-left: 1em;
+	color: white;
+	background-color:#5AA2DE;
+	font-family:Arial,Helvetica,"Sans serif"; 
+	font-size:1em;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#accordeons {
+	margin-left: 2em;
+	margin-right: 2em;
+	padding-left: 0px;
+	padding-right: 0px;
+	border: silver thin solid;
+	
+}
+
+section {
+	margin: 0;
+}
+
+div[id^="zone"]{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 1em;
+}
+
+h3{
+	font-family:Arial, Verdana, Helvetica, sans-serif;
+	font-size:1em;
+	color: gray;
+	padding: 1em;
+	margin: 0px;
+}
+
+h3:hover {
+	cursor: pointer;
+	color: black;
+}
+
+ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	}
+
+footer {
+	margin-top:1em;
+	/*border-top: solid #CCCCCC 2px;*/
+	color:#999999;
+	font-size:0.8em;
+	text-align:center;	
+}
+
+a, a:visited {
+	text-decoration: none;
+}
