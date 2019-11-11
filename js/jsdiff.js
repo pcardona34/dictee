@@ -1,3 +1,5 @@
+'use strict'
+
 /*
  * Javascript Diff Algorithm
  *  By John Resig (http://ejohn.org/)

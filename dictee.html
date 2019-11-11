@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<!--
+ * dictee.html
+ *
+ * ( c ) 2012-2019 Patrick Cardona
+ * Dictee de JDicto.
+ *
+ */
+ -->
 	
 	<head>
 		<meta charset="utf-8">
 		<title>Dictée</title>
 		
 		<!-- CSS partagée : dictée -->
+		<link href="css/chargement.css" type="text/css" rel="stylesheet" />
 		<link href="lib/css/carspec.css" type="text/css" rel="stylesheet" />
 		<link href="css/dictee.css" rel="stylesheet" type="text/css" />
 		<link href="css/boutons.css" rel="stylesheet" type="text/css" />
 		
-		<script src="js/insertion.js"></script>
+		
 	</head>
 	
 	<body>
@@ -24,7 +34,7 @@
 	
 	<!-- Corps de l'appli -->	
 
-<div id="conteneur">Veuillez patienter... La dictée se prépare...</div>
+<div id="conteneur"><p class="chargement">Veuillez patienter... La dictée se prépare...</p></div>
 
 <!-- Modèle -->
 <template id="modele">
@@ -118,16 +128,16 @@
 	<!-- Optimisation : le code des lib javascript est chargé en fin de fichier -->
 	<!-- Lib JavaScript génériques ou partagées : dictée + générateur -->
 		<script src="js/navigateur.js"></script>
-							
 		<!-- Lib liées à cette page -->
+		<script src="js/insertion.js"></script>		
 		<script src="js/jsdiff.js"></script>
 		
 		<!-- Scripts partagés -->
 		<script src="lib/js/apropos.js"></script>
+		<script src="lib/js/lic.js"></script>
 		
 		<!-- Scripts liés à cette page -->
 		<script src="js/dictee.js"></script>
-		<script src="lib/js/lic.js"></script>
 		<script src="js/interface.js"></script>
 	</body>
 </html>

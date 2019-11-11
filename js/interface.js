@@ -1,3 +1,5 @@
+'use strict'
+
 /*
  * interface.js
  *
@@ -50,9 +52,6 @@ else
     {
 	var donnees = 'json/dictee' + numero + '.json';
 }
-
-
-
 
 /* ****************************************** */
 /* Gestion effective des données de la dictée */
@@ -150,7 +149,7 @@ fetch(donnees)
 	});
 
 	// Gestion des boutons
-	submits = document.querySelectorAll("input[type=submit]");
+	let submits = document.querySelectorAll("input[type=submit]");
 	for ( let i = 0; i < submits.length; i++ ){
 	submits[i].addEventListener('click', function(e){
 		var instruction = this.value;

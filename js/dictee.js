@@ -1,3 +1,5 @@
+'use strict'
+
 /* Dicto : dictee.js
  ( c ) 2012-2019 - Patrick Cardona
  Version 2.0
@@ -52,7 +54,7 @@ oDictee.prototype.corrige = function() {
 		return sortie.replace(reg,"<br />");
 	}
 	else {
-		apprise ("Veuillez d'abord saisir le texte de la dictée !");
+		alert ("Veuillez d'abord saisir le texte de la dictée !");
 		return -1;
 	}
 }
