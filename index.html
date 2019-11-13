@@ -15,6 +15,7 @@
 		<title>Index des dictées</title>
 		
 		<!-- CSS -->
+		<link href="css/chargement.css" rel="stylesheet" type="text/css" />
 		<link href="css/degrade.css" rel="stylesheet" type="text/css" />
 		<link href="css/index.css" rel="stylesheet" type="text/css" />
 
@@ -22,7 +23,11 @@
 	
 	<body>
 	
-	<!-- Corps de l'appli -->	
+	<!-- Corps de l'appli -->
+	<div id="conteneur"><p class="chargement">Veuillez patienter...</p></div>
+	
+	<template id="modele">
+			
 	<header>
 		<div>
 			<h1 id="titre_principal">Index des dictées</h1>
@@ -60,6 +65,10 @@
 			Dictées proposées par Patrick Cardona
 		
 	</footer>
-    <script src="js/accordeons.js"></script>
+
+	</template>
+
+     <script src="js/accordeons.js"></script>
+     <script src="js/index.js"></script>
      </body>
 </html>
