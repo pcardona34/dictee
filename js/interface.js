@@ -104,7 +104,7 @@ fetch(donnees)
     		document.getElementById("conteneur").appendChild(nouvel);
 		}
 		else{
-			alert("Une erreur s'est produite : le fichier de données n'est pas conforme.");
+			message("Une erreur s'est produite : le fichier de données n'est pas conforme.");
 		}
 
 
@@ -130,14 +130,14 @@ fetch(donnees)
 	var aides = document.querySelectorAll(".aide");
 	for ( let i = 0; i < aides.length; i++){
 	aides[i].addEventListener('click', function(e){
-			alert ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
+			message ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
 			e.preventDefault();
 		});
 	}
 	
 	/* Licence */
 	document.querySelector("a[title='Licence']").addEventListener('click', function(e){
-		alert(lic);
+		message(lic);
 		e.preventDefault();
 	});
 	
@@ -155,7 +155,7 @@ fetch(donnees)
 		var instruction = this.value;
 		switch ( instruction ){
 
-			case "Corriger la dictée":
+			case "Corriger":
 				dictee.saisie = document.getElementById("dictee").value;
 				if(dictee.saisie.length > 0){
 					var correction = dictee.corrige();
@@ -167,12 +167,11 @@ fetch(donnees)
 						document.getElementById("section_4").style.display = 'block';
 					}
 				}else{
-					alert("Veuillez d'abord saisir le texte de votre dictée.");
-					//return false;
+					message("Veuillez d'abord saisir le texte de votre dictée.");
 				}
 			break;
 
-			case "Afficher la solution":
+			case "Solution":
 				document.getElementById("solution").innerHTML = dictee.affiche();
 				document.getElementById("section_3").style.display = 'block';
 				document.getElementById("section_1").style.display = 'none';
@@ -183,15 +182,15 @@ fetch(donnees)
 			break;
 
 			case "Recommencer":
-				let r = confirm('Voulez-vous vraiment tout recommencer ?');
-					if(r){
+				/*let r = confirm('Voulez-vous vraiment tout recommencer ?');*/
+					/*if(r){*/
 						document.getElementById("dictee").value = "";
 						document.getElementById("section_2").style.display = 'none';
 						document.getElementById("section_3").style.display = 'none';
 						document.getElementById("section_4").style.display = 'none';
-						document.getElementById("section_1").style.display = 'block';
+						document.getElementById("section_1").style.display = 'none';
 						document.getElementById("section_1_bis").style.display = 'block';
-					}
+					/*}*/
 				
 			break;
 
@@ -199,14 +198,61 @@ fetch(donnees)
 				document.getElementById("section_2").style.display = 'none';
 				document.getElementById("section_3").style.display = 'none';
 				document.getElementById("section_4").style.display = 'none';
-				document.getElementById("section_1").style.display = 'block';
+				document.getElementById("section_1").style.display = 'none';
 				document.getElementById("section_1_bis").style.display = 'block';
 			break;
 
 			default:
-			alert ( "Aucune action définie !");
+			alert ( "Aucune action définie !"); // utile surtout pour le débogage
 		}
 		e.preventDefault(); // pour empêcher la soumission effective du formulaire.
 	});
 	} // Fin de la boucle for
+	
+	// Bouton de fermeture de message
+	let bouton_fermeture = document.getElementById("fermer");
+	bouton_fermeture.addEventListener('click', function(e){
+		let zone_message = document.getElementById("zone_message");
+		zone_message.style.display = 'none';
+		});
+	// Gestion du bouton de menu
+	let items = document.querySelectorAll("menu ul");
+	let menu = document.querySelectorAll("menu img");
+		for ( let j = 0; j < menu.length; j++ ){
+			menu[j].addEventListener('click', function(e){
+				for ( let i = 0; i < items.length; i++ ){
+					items[i].style.display = 'block';
+				}
+			});
+		}
+	
+	
+	// Gestion des items de menu
+	for ( let i = 0; i < items.length; i++ ){
+		items[i].addEventListener('click', function(e){
+			for ( let j = 0; j < items.length; j++ ){
+				items[j].style.display = 'none';
+			}	
+		});
+	}
+	
+	let message_aide = "D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...<br />";
+	menu_aide = document.getElementById("menu_aide");
+	menu_aide.addEventListener('click', function(e){
+		message(message_aide);
+	});
+	
+	menu_ecouter = document.getElementById("menu_ecouter");
+	menu_ecouter.addEventListener('click', function(e){
+		document.getElementById("section_1_bis").style.display = 'none';
+		document.getElementById("section_1").style.display = 'block';
+	});
+	
+	menu_saisir = document.getElementById("menu_saisir");
+	menu_saisir.addEventListener('click', function(e){
+		document.getElementById("section_1").style.display = 'none';
+		document.getElementById("section_1_bis").style.display = 'block';
+	});
+	
+
 }); // Fin du chargement de l'interface

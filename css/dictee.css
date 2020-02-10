@@ -1,12 +1,12 @@
 /*
  * dictee.css
  *  
- * ( c ) 2012-2019 Patrick Cardona
+ * ( c ) 2012-2020 Patrick Cardona
  * dictee de JDicto
  */
 
 /* =================================================================== */
-/* LICENCE
+/* LICENCE							       */
 /* =================================================================== */
 /*
 @licstart  The following is the entire license notice for the 
@@ -15,7 +15,7 @@
 Copyright (C) 2012-2019 Patrick CARDONA - Dictee de JDicto
 
     The CSS code in this page is free software: you can
-    redistribute it and/or modify it under the terms of the GNU
+    redistribute it or modify it under the terms of the GNU
     General Public License (GNU GPL) as published by the Free Software
     Foundation, either version 3 of the License, or (at your option)
     any later version.  The code is distributed WITHOUT ANY WARRANTY;
@@ -34,29 +34,72 @@ Copyright (C) 2012-2019 Patrick CARDONA - Dictee de JDicto
 
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
+@media (min-width: 600px) {
+
 body {
 	padding:0.5em;
 }
 
-
 header {
-	padding: 0.3em;
+	margin-left: 1em;
+	margin-right: 1em;
 	padding-left: 1em;
-	color: white;
-	background-color:#5AA2DE;
-	font-family:Arial,Helvetica,"Sans serif"; 
-	font-size:1em;
+	padding-right: 1em;
 	border-radius: 10px;
 }
 
-#cadre_prof {
-	text-align:left;
-	font-size: 1em;
-	}
+section {
+		margin: 1em;
+		padding-left: 1em;
+}
+
+footer {
+	margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.6em;
+}
+
+}
+
+
+
+@media (max-width: 599) {
+
+body {
+	margin:0px;
+	padding:0px;
+}
+
+header {
+	margin: 0px;
+	padding: 1em;
+}
+
+menu {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+}
+
+/* ********************************* */
+/* En commun à toutes les interfaces */
+/* ********************************* */
+
+header {
+	padding-bottom: 0.5em;
+	color: white;
+	background-color:#5AA2DE;
+	font-family:Arial,Helvetica,Sans-serif; 
+	font-size:1em;
+}
 
 section {
-	margin-left:3em;
-	margin-right:2em;	
+	/* margin-left:3em; */
+	margin-left:0em;
+	/*margin-right:2em;*/	
 }
 
 aside {
@@ -69,7 +112,8 @@ footer {
 	border-top: solid #CCCCCC 2px;
 	color:#999999;
 	font-size:0.8em;
-	text-align:center;	
+	text-align:center;
+	clear: both;
 }
 
 h1, h2 {
@@ -77,7 +121,7 @@ h1, h2 {
 }
 
 h1 {
-	font-size:1.2em;	
+	font-size:1.4em;	
 }
 
 h2 {
@@ -101,16 +145,20 @@ h2 {
 }
 
 #dictee {
+	box-sizing: border-box;
+	width: 100%;
+	background-color: lightblue;
 	font-family: 'Pacifico', cursive;
-	font-size:1.3em;	
+	font-size:1.3em;
 }
 
 del {
-	color: #d9534f; /* rouge de Bootstrap */	
+	color: #d9534f; /* rouge de Bootstrap */
 }
 
 ins {
-	color: #5CB85C; /* vert de Bootstrap */	
+	color: #5CB85C; /* vert de Bootstrap */
+	text-decoration: none;
 }
 
 #auteur {
@@ -121,34 +169,32 @@ ins {
 	font-style:italic;	
 }
 
+
 #ecrire {
-		background-color:#CCCCCC;
+		background-color: white;
 }
 
 
-textarea, fieldset {
+textarea {
 	border-radius: 10px;
-}
-
-fieldset {
-	padding:0.2em;
-		
 }
 
 #section_1, #section_1_bis {
 	clear:both;	
 }
 
-#section_2, #section_3 {
-	margin-left:3em;
-}
-
 #section_4 {
 	text-align:center;	
 }
 
+#lecteur_audio {
+	margin: 1em;
+	width: 80%;
+}
+
 .audio {
-	padding:1.5em;
+	width: 100%;
+	padding:0.65em;
 	background-color:#CCCCCC;
 	border-radius: 10px;
 	box-shadow:
@@ -178,6 +224,11 @@ fieldset {
 	font-size: smaller;
 	color : #5CB85C; /* vert de Bootstrap */
 }
+
+#section_1, #section_1_bis {
+	display: none;
+	}
+
 
 
 

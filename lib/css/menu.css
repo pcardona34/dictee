@@ -1,0 +1,134 @@
+/*
+ * menu.css
+ *  
+ * ( c ) 2012-2020 Patrick Cardona
+ * dictee de JDicto
+ */
+
+/* =================================================================== */
+/* LICENCE							       */
+/* =================================================================== */
+/*
+@licstart  The following is the entire license notice for the 
+    CSS code in this page.
+
+Copyright (C) 2012-2020 Patrick CARDONA - Dictee de JDicto
+
+    The CSS code in this page is free software: you can
+    redistribute it or modify it under the terms of the GNU
+    General Public License (GNU GPL) as published by the Free Software
+    Foundation, either version 3 of the License, or (at your option)
+    any later version.  The code is distributed WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS
+    FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+    As additional permission under GNU GPL version 3 section 7, you
+    may distribute non-source (e.g., minimized or compacted) forms of
+    that code without the copy of the GNU GPL normally required by
+    section 4, provided you include this license notice and a URL
+    through which recipients can access the Corresponding Source.
+    
+@licend  The above is the entire license notice
+    for the CSS code in this page.    
+*/
+
+@media (max-width: 599px) {
+
+menu img#noir {
+    display: none;
+}
+
+menu img#blanc {
+    margin-left: 0.4em;
+}
+
+menu {
+    display: block;
+    margin-left: 0px;
+    padding-left: 10px;
+    float: left;
+}
+
+menu ul {
+    position: absolute;
+    margin-left: 0px;
+    padding-left: 0px;
+    background-color: #5AA2DE;
+    width: 90%;    
+    border: thin solid #5AA2DE;
+    float:left;
+}
+
+menu h1 {
+    display: none;
+}
+
+menu ul li {
+    background-color: white;
+}
+
+menu ul li#menu_aide {
+    border-radius: 10px 10px 0px 0px;
+}
+
+menu ul {
+    display: none;
+}
+
+}
+
+@media (min-width: 600px) {
+
+menu img#blanc {
+    display: none;
+}
+
+menu {
+    display: block;
+    margin-left: 0px;
+    margin-right: 2em;
+    padding: 0px;
+}
+
+menu img {
+    float: left;
+    margin-left:0.2em;
+}
+
+menu img:hover {
+    cursor: pointer;
+}
+
+menu h1 {
+    display: block;
+    font-size: 2.1em;
+}
+
+menu ul {
+    clear: both;
+    width: 80%;
+}
+
+menu ul li:hover {
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
+
+menu ul {
+    display: none;
+}
+
+}
+
+/* En commun */
+
+menu ul li {
+    list-style-type: none;
+    padding: 0.4em;
+    background-color: white;
+    border: thin solid #5AA2DE;
+    font-family: sans-serif;
+    color: #5AA2DE;
+}
+

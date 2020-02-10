@@ -4,7 +4,7 @@
 <!--
  * dictee.html
  *
- * ( c ) 2012-2019 Patrick Cardona
+ * ( c ) 2012-2020 Patrick Cardona
  * Dictee de JDicto.
  *
  */
@@ -18,7 +18,9 @@
 		<link href="css/chargement.css" type="text/css" rel="stylesheet" />
 		<link href="lib/css/carspec.css" type="text/css" rel="stylesheet" />
 		<link href="css/dictee.css" rel="stylesheet" type="text/css" />
+		<link href="lib/css/message.css" rel="stylesheet" type="text/css" />
 		<link href="css/boutons.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="lib/css/menu.css" />
 		
 		
 	</head>
@@ -38,14 +40,33 @@
 
 <!-- Modèle -->
 <template id="modele">
+		<menu>
+		<img id="noir" src="img/menu.png" alt="Menu"/> 
+		<img id="blanc" src="img/blanc.png" alt="Menu mobile" /> 
+		<h1 id="titre_app">&nbsp;Dictée</h1>
+			<ul>
+				<li id="menu_aide">Aide</li>
+				<li id="menu_ecouter">Écouter la dictée</li>
+				<li id="menu_saisir">Saisir le texte</li>
+			</ul>
+		</menu>
+		
 		<header>
 		<div>
 			<h1 id="titre_principal"></h1>
-			<p id="cadre_prof">D'après <span id="auteur"></span>, <span id="ouvrage"></span> &nbsp;&nbsp;|&nbsp;&nbsp;
-				<span id="prof"></span>
-			</p>
 		</div>
 	</header>
+
+
+
+	<section id="zone_message">
+		<p id="message">
+		D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. 
+			Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...<br />
+		</p>
+		<p style="text-align: center"><button id="fermer">Fermer</button></p>
+		
+	</section>
 	
 	<section>
 		<div id="section_1">
@@ -59,10 +80,7 @@
 		</div>
 		<div id="section_1_bis">
 			<!-- Formulaire de saisie du texte de la dictée -->
-			<h2>Écrire la dictée</h2>
-			<div id="conseil"><p>D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. 
-			Puis saisissez-la dans la zone de texte ci-dessous.</p></div>
-		
+			<h2>Écrire la dictée</h2>		
 			<table id="table_spec">
 				<caption>
 					Caractères spéciaux	
@@ -81,13 +99,13 @@
 			</table>
 			<form name="formulaire">
 				
-				<fieldset  id="ecrire">
+				<!--<fieldset  id="ecrire">-->
 					<textarea id="dictee" name="dictee" cols="80" rows="7"></textarea>
-				</fieldset>
-				<br />
-				<input type="submit" value="Corriger la dictée" /> 
-				&nbsp;&nbsp;
-				<input type="submit" value="Afficher la solution" />
+				<!--</fieldset>-->
+				<p style="text-align:center">
+				<input type="submit" value="Corriger" />
+				<input type="submit" value="Solution" />
+				</p>
 			</form>
 		</div>
 	</section>
@@ -115,8 +133,11 @@
 	
 	<!-- Pied de page -->	
 	<footer>
-		Dictée réalisée au moyen de <a title="apropos" href="#">JDicto</a> - © 2012-2019 Patrick Cardona.
+		Dictée réalisée au moyen de <a title="apropos" href="#">JDicto</a> - © 2012-2020 Patrick Cardona.
 		&nbsp;| <a href="#" title="Licence" rel="jslicense">Licence</a>
+		<p id="cadre_prof">Mentions légales : d'après <span id="auteur"></span>, <span id="ouvrage"></span> &nbsp;|&nbsp;
+				<span id="prof"></span>
+		</p>
 	</footer>
     
 </template>
@@ -133,6 +154,7 @@
 		<script src="js/jsdiff.js"></script>
 		
 		<!-- Scripts partagés -->
+		<script src="lib/js/message.js"></script>
 		<script src="lib/js/apropos.js"></script>
 		<script src="lib/js/lic.js"></script>
 		
