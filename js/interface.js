@@ -119,58 +119,60 @@ fetch(donnees)
 	// Caractères spéciaux
 	var specs = document.querySelectorAll(".spec");
 	for ( let i = 0; i < specs.length; i++){
-		specs[i].addEventListener('click', function(e){
+		specs[i].addEventListener('mouseup', specTapOrClick, false);
+		specs[i].addEventListener('touchend', specTapOrClick, false);
+	}
+		
+	function specTapOrClick(event) {
 			var carspec = this.innerText;
 			insertion(carspec);
-			e.preventDefault();
-		});
+			event.preventDefault();
+			return false;
 	}
 
 	// Aide contextuelle
 	var aides = document.querySelectorAll(".aide");
 	for ( let i = 0; i < aides.length; i++){
-	aides[i].addEventListener('click', function(e){
-			message ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
-			e.preventDefault();
-		});
-	aides[i].addEventListener('touchend', function(e){
-			message ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
-			e.preventDefault();
-		});
+	aides[i].addEventListener('mouseup', aideTapOrClick, false);
+	aides[i].addEventListener('touchend', aideTapOrClick, false);
 	}
 	
-	
+	function aideTapOrClick(event) {
+		message ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
+		e.preventDefault();
+		return false;	
+	}
 	
 	/* Licence */
-	document.querySelector("a[title='Licence']").addEventListener('click', function(e){
-		message(lic);
-		e.preventDefault();
-	});
-	document.querySelector("a[title='Licence']").addEventListener('touchend', function(e){
-		message(lic);
-		e.preventDefault();
-	});
+	document.querySelector("a[title='Licence']").addEventListener('mouseup', licTapOrClick, false);
+	document.querySelector("a[title='Licence']").addEventListener('touchend', licTapOrClick, false);
 	
+	function licTapOrClick(event){
+		message(lic);
+		e.preventDefault();
+		return false;
+	}
 	
 	/* Gestion du lien 'à propos' dans l'interface */
-	document.querySelector("a[title=apropos]").addEventListener('click', function(e){
+	document.querySelector("a[title=apropos]").addEventListener('mouseup', aproposTapOrClick, false);
+	document.querySelector("a[title=apropos]").addEventListener('touchend', aproposTapOrClick, false);
+		
+	function aproposTapOrClick(event){
 		apropos.affiche();
-		e.preventDefault(); // Pour ne pas suivre le lien.
-	});
-	document.querySelector("a[title=apropos]").addEventListener('touchend', function(e){
-		apropos.affiche();
-		e.preventDefault(); // Pour ne pas suivre le lien.
-	});
+		event.preventDefault();
+		return false;
+	}
+
 
 	// Gestion des boutons
 	let submits = document.querySelectorAll("input[type=submit]");
 	for ( let i = 0; i < submits.length; i++ ){
-	submits[i].addEventListener('click', instructions(this));
-	submits[i].addEventListener('touchend', instructions(this));
+	submits[i].addEventListener('mouseup', instructions, false);
+	submits[i].addEventListener('touchend', instructions, false);
 	}
 	
 	
-	function instructions(e){
+	function instructions(event){
 		var instruction = this.value;
 		switch ( instruction ){
 
@@ -224,31 +226,34 @@ fetch(donnees)
 			default:
 			alert ( "Aucune action définie !"); // utile surtout pour le débogage
 		}
-		e.preventDefault(); // pour empêcher la soumission effective du formulaire.
+		event.preventDefault(); // pour empêcher la soumission effective du formulaire.
+		return false;
 	}
 
 	
 	// Bouton de fermeture des mentions légales
 	let bouton_fermeture_mentions = document.getElementById("fermer_bis");
-	bouton_fermeture_mentions.addEventListener('click', function(e){
+	bouton_fermeture_mentions.addEventListener('mouseup', fermetureMentions, false);
+	bouton_fermeture_mentions.addEventListener('touchend', fermetureMentions, false);
+		
+	function fermetureMentions(event){
 		let mentions = document.getElementById("mentions");
 		mentions.style.display = 'none';
-		});
-	bouton_fermeture_mentions.addEventListener('touchend', function(e){
-		let mentions = document.getElementById("mentions");
-		mentions.style.display = 'none';
-		});
-	
+		event.preventDefault();
+		return false;
+	}
+
 	// Bouton de fermeture de message
 	let bouton_fermeture = document.getElementById("fermer");
-	bouton_fermeture.addEventListener('click', function(e){
+	bouton_fermeture.addEventListener('mouseup', fermetureMessage, false);
+	bouton_fermeture.addEventListener('touchend', fermetureMessage, false);
+
+	function fermetureMessage(event){
 		let zone_message = document.getElementById("zone_message");
 		zone_message.style.display = 'none';
-		});
-	bouton_fermeture.addEventListener('touchend', function(e){
-		let zone_message = document.getElementById("zone_message");
-		zone_message.style.display = 'none';
-		});
+		event.preventDefault();
+		return false;
+	}
 		
 	// Gestion du bouton de menu
 	let menu = document.getElementById("menu");
@@ -257,68 +262,75 @@ fetch(donnees)
 	let items = document.querySelectorAll("menu ul li");
 	
 	// Gestion d'événement : si on clique sur l'icône de menu:
-	icone_menu.addEventListener('click', function(e){
-			menu.style.display = 'block';
-		});
-	icone_menu.addEventListener('touchend', function(e){
-			menu.style.display = 'block';
-		});
+	icone_menu.addEventListener('mouseup', iconeMenuTapOrClick, false);
+	icone_menu.addEventListener('touchend', iconeMenuTapOrClick, false);
+
+	function iconeMenuTapOrClick(event){
+		menu.style.display = 'block';
+		event.preventDefault();
+		return false;
+	}
 	
 	// Gestion des items de menu : si on clique sur un item quelconque
 	for ( let i = 0; i < items.length; i++ ){
-			items[i].addEventListener('click', function(e){
-				if ( style.display == 'none' ){
+			items[i].addEventListener('mouseup', itemTapOrClick, false);
+			items[i].addEventListener('touchend', itemTapOrClick, false);
+	}
+
+	function itemTapOrClick(event){
+		if ( style.display == 'none' ){
 					menu.style.display = 'block';
 				} else {
 					menu.style.display = 'none';
 				}
-			});
-			items[i].addEventListener('touchend', function(e){
-				if ( style.display == 'none' ){
-					menu.style.display = 'block';
-				} else {
-					menu.style.display = 'none';
-				}
-			});
+		event.preventDefault();
+		return false;
 	}
 	
 	let message_aide = "D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...<br />";
 	menu_aide = document.getElementById("menu_aide");
-	menu_aide.addEventListener('click', function(e){
+	menu_aide.addEventListener('mouseup', menuAideTapOrClick, false);
+	menu_aide.addEventListener('touchend', menuAideTapOrClick, false);
+	
+	function menuAideTapOrClick(event){
 		message(message_aide);
-	});
-	menu_aide.addEventListener('touchend', function(e){
-		message(message_aide);
-	});
+		event.preventDefault();
+		return false;
+	}
 	
 	
 	menu_ecouter = document.getElementById("menu_ecouter");
-	menu_ecouter.addEventListener('click', function(e){
+	menu_ecouter.addEventListener('mouseup', menuEcouterTapOrClick, false);
+	menu_ecouter.addEventListener('touchend', menuEcouterTapOrClick, false);
+		
+
+	function menuEcouterTapOrClick(event){
 		document.getElementById("section_1_bis").style.display = 'none';
 		document.getElementById("section_1").style.display = 'block';
-	});
-	menu_ecouter.addEventListener('touchend', function(e){
-		document.getElementById("section_1_bis").style.display = 'none';
-		document.getElementById("section_1").style.display = 'block';
-	});
+		event.preventDefault();
+		return false;
+	}
 	
 	menu_saisir = document.getElementById("menu_saisir");
-	menu_saisir.addEventListener('click', function(e){
+	menu_saisir.addEventListener('mouseup', menuSaisirTapOrClick, false);
+	menu_saisir.addEventListener('touchend', menuSaisirTapOrClick, false);
+
+	function menuSaisirTapOrClick(event){
 		document.getElementById("section_1").style.display = 'none';
 		document.getElementById("section_1_bis").style.display = 'block';
-	});
-	menu_saisir.addEventListener('touchend', function(e){
-		document.getElementById("section_1").style.display = 'none';
-		document.getElementById("section_1_bis").style.display = 'block';
-	});
+		event.preventDefault();
+		return false;
+	}
 	
 	menu_mentions = document.getElementById("menu_mentions");
-	menu_mentions.addEventListener('click', function(e){
+	menu_mentions.addEventListener('mouseup', menuMentionsTapOrClick, false);
+	menu_mentions.addEventListener('touchend', menuMentionsTapOrClick, false);
+
+	function menuMentionsTapOrClick(event){
 		document.getElementById("mentions").style.display = 'block';
-	});
-	menu_mentions.addEventListener('touchend', function(e){
-		document.getElementById("mentions").style.display = 'block';
-	});
-	
+		event.preventDefault();
+		return false;
+	}
+
 
 }); // Fin du chargement de l'interface
