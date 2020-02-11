@@ -266,7 +266,7 @@ fetch(donnees)
 		return false;
 	}
 	
-/*	// Gestion des items de menu : si on clique sur un item quelconque
+// Gestion des items de menu : si on clique sur un item quelconque
 	for ( let i = 0; i < items.length; i++ ){
 			items[i].addEventListener('mouseup', itemTapOrClick, false);
 			items[i].addEventListener('touchend', itemTapOrClick, false);
@@ -281,11 +281,11 @@ fetch(donnees)
 		event.preventDefault();
 		return false;
 	}
-	*/
+	
 	
 	let message_aide = "D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...<br />";
 	menu_aide = document.getElementById("menu_aide");
-	menu_aide.addEventListener('mouseup', menuAideTapOrClick, false);
+	menu_aide.addEventListener('click', menuAideTapOrClick, false);
 	menu_aide.addEventListener('touchend', menuAideTapOrClick, false);
 	
 	function menuAideTapOrClick(event){
