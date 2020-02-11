@@ -77,17 +77,17 @@ oApropos.prototype.licence = function(_type){
 }
 
 oApropos.prototype.affiche = function() {
-	var msg = "À propos de "+ this.nom_appli +" "+ this.version +"\n";
-	msg += "©"+ this.annee +" "+ this.auteur +"\n\n";
-	msg += "Cette application est un logiciel libre, réalisé grâce à :\n\n";
+	var msg = "À propos de "+ this.nom_appli +" "+ this.version +"<br />";
+	msg += "©"+ this.annee +" "+ this.auteur +"<br /><br />";
+	msg += "Cette application est un logiciel libre, réalisé grâce à :<br /><br />";
 	for (var i = 0; i < this.merci.length ; i++){
-		msg	+= this.merci[i][0] +":\n"+ this.merci[i][1];
-		msg += "\n" + this.licence(this.merci[i][2]) +"\nCode source: " + this.merci[i][3] + "\n\n";
+		msg	+= this.merci[i][0] +":<br />"+ this.merci[i][1];
+		msg += "<br />" + this.licence(this.merci[i][2]) +"<br />Code source: " + this.merci[i][3] + "<br /><br />";
 	}
 	message (msg);	
 }
 
-var apropos = new oApropos("Patrick Cardona", "2012-2019", "dictée de jDicto", "2.0.0");
+var apropos = new oApropos("Patrick Cardona", "2012-2020", "dictée de jDicto", "3.0.0");
 
 // App ou API spécifiques du projet
 apropos.ajoute ("JsDiff de John Resig", "http://ejohn.org/","MIT","https://github.com/kpdecker/jsdiff");

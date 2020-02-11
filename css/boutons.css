@@ -46,7 +46,7 @@ button, input[type="submit"] {
     border: none;
 }
 
-@media screen and (min-width: 600px)
+@media screen and (min-width: 800px)
 {
     
     button, input[type="submit"] {

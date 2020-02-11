@@ -133,10 +133,20 @@ fetch(donnees)
 			message ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
 			e.preventDefault();
 		});
+	aides[i].addEventListener('touchend', function(e){
+			message ("Placez le curseur de texte à l'endroit désiré, puis cliquez sur un bouton caractère spécial pour l'insérer dans votre texte.");
+			e.preventDefault();
+		});
 	}
+	
+	
 	
 	/* Licence */
 	document.querySelector("a[title='Licence']").addEventListener('click', function(e){
+		message(lic);
+		e.preventDefault();
+	});
+	document.querySelector("a[title='Licence']").addEventListener('touchend', function(e){
 		message(lic);
 		e.preventDefault();
 	});
@@ -147,11 +157,20 @@ fetch(donnees)
 		apropos.affiche();
 		e.preventDefault(); // Pour ne pas suivre le lien.
 	});
+	document.querySelector("a[title=apropos]").addEventListener('touchend', function(e){
+		apropos.affiche();
+		e.preventDefault(); // Pour ne pas suivre le lien.
+	});
 
 	// Gestion des boutons
 	let submits = document.querySelectorAll("input[type=submit]");
 	for ( let i = 0; i < submits.length; i++ ){
-	submits[i].addEventListener('click', function(e){
+	submits[i].addEventListener('click', instructions(this));
+	submits[i].addEventListener('touchend', instructions(this));
+	}
+	
+	
+	function instructions(e){
 		var instruction = this.value;
 		switch ( instruction ){
 
@@ -206,8 +225,8 @@ fetch(donnees)
 			alert ( "Aucune action définie !"); // utile surtout pour le débogage
 		}
 		e.preventDefault(); // pour empêcher la soumission effective du formulaire.
-	});
-	} // Fin de la boucle for
+	}
+
 	
 	// Bouton de fermeture des mentions légales
 	let bouton_fermeture_mentions = document.getElementById("fermer_bis");
@@ -215,10 +234,18 @@ fetch(donnees)
 		let mentions = document.getElementById("mentions");
 		mentions.style.display = 'none';
 		});
+	bouton_fermeture_mentions.addEventListener('touchend', function(e){
+		let mentions = document.getElementById("mentions");
+		mentions.style.display = 'none';
+		});
 	
 	// Bouton de fermeture de message
 	let bouton_fermeture = document.getElementById("fermer");
 	bouton_fermeture.addEventListener('click', function(e){
+		let zone_message = document.getElementById("zone_message");
+		zone_message.style.display = 'none';
+		});
+	bouton_fermeture.addEventListener('touchend', function(e){
 		let zone_message = document.getElementById("zone_message");
 		zone_message.style.display = 'none';
 		});
@@ -233,16 +260,26 @@ fetch(donnees)
 	icone_menu.addEventListener('click', function(e){
 			menu.style.display = 'block';
 		});
+	icone_menu.addEventListener('touchend', function(e){
+			menu.style.display = 'block';
+		});
 	
 	// Gestion des items de menu : si on clique sur un item quelconque
 	for ( let i = 0; i < items.length; i++ ){
 			items[i].addEventListener('click', function(e){
-			if ( style.display == 'none' ){
-				menu.style.display = 'block';
-			} else {
-				menu.style.display = 'none';
-			}
-		});
+				if ( style.display == 'none' ){
+					menu.style.display = 'block';
+				} else {
+					menu.style.display = 'none';
+				}
+			});
+			items[i].addEventListener('touchend', function(e){
+				if ( style.display == 'none' ){
+					menu.style.display = 'block';
+				} else {
+					menu.style.display = 'none';
+				}
+			});
 	}
 	
 	let message_aide = "D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...<br />";
@@ -250,9 +287,17 @@ fetch(donnees)
 	menu_aide.addEventListener('click', function(e){
 		message(message_aide);
 	});
+	menu_aide.addEventListener('touchend', function(e){
+		message(message_aide);
+	});
+	
 	
 	menu_ecouter = document.getElementById("menu_ecouter");
 	menu_ecouter.addEventListener('click', function(e){
+		document.getElementById("section_1_bis").style.display = 'none';
+		document.getElementById("section_1").style.display = 'block';
+	});
+	menu_ecouter.addEventListener('touchend', function(e){
 		document.getElementById("section_1_bis").style.display = 'none';
 		document.getElementById("section_1").style.display = 'block';
 	});
@@ -262,9 +307,16 @@ fetch(donnees)
 		document.getElementById("section_1").style.display = 'none';
 		document.getElementById("section_1_bis").style.display = 'block';
 	});
+	menu_saisir.addEventListener('touchend', function(e){
+		document.getElementById("section_1").style.display = 'none';
+		document.getElementById("section_1_bis").style.display = 'block';
+	});
 	
 	menu_mentions = document.getElementById("menu_mentions");
 	menu_mentions.addEventListener('click', function(e){
+		document.getElementById("mentions").style.display = 'block';
+	});
+	menu_mentions.addEventListener('touchend', function(e){
 		document.getElementById("mentions").style.display = 'block';
 	});
 	

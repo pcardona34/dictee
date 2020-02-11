@@ -46,15 +46,14 @@ Copyright (C) 2012-2020 Patrick CARDONA - Dictee de JDicto
 #message, #cadre_prof {
     margin: 0.2em;
     font-family: sans-serif;
-    font-size: 16px;
-    font-size-adjust: 0.6;
 }
     
-    #zone_message h2, #mentions h2 { color: antiquewhite; font-size-adjust: 0.8 }
+#zone_message h2, #mentions h2 { 
+color: antiquewhite; }
 
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
 
 #zone_message, #mentions {
     background-color: whitesmoke;
@@ -68,11 +67,9 @@ Copyright (C) 2012-2020 Patrick CARDONA - Dictee de JDicto
     #message, #cadre_prof {
     margin: 0.6em;
     font-family: sans-serif;
-    font-size: 16px;
-    font-size-adjust: inherit;
 }
     
-    #zone_message h2, #mentions h2 { color: #5AA2DE; font-size-adjust: 0.6 }
+    #zone_message h2, #mentions h2 { color: #5AA2DE; }
 
 }
 
