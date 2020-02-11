@@ -47,7 +47,7 @@ menu ul {
 }
 
 menu {
-    display: none;
+   /* display: none; */
 }
     
     menu ul li {
