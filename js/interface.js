@@ -167,12 +167,11 @@ fetch(donnees)
 	// Gestion des boutons
 	let submits = document.querySelectorAll("input[type=submit]");
 	for ( let i = 0; i < submits.length; i++ ){
-	submits[i].addEventListener('mouseup', instructions, false);
-	submits[i].addEventListener('touchend', instructions, false);
+	submits[i].addEventListener('click', submitTapOrClick, false); // Ne fonctionne pas avec 'mouseup' : bogue
+	submits[i].addEventListener('touchend', submitTapOrClick, false);
 	}
-	
-	
-	function instructions(event){
+
+	function submitTapOrClick(event){
 		var instruction = this.value;
 		switch ( instruction ){
 
@@ -203,16 +202,12 @@ fetch(donnees)
 			break;
 
 			case "Recommencer":
-				/*let r = confirm('Voulez-vous vraiment tout recommencer ?');*/
-					/*if(r){*/
-						document.getElementById("dictee").value = "";
-						document.getElementById("section_2").style.display = 'none';
-						document.getElementById("section_3").style.display = 'none';
-						document.getElementById("section_4").style.display = 'none';
-						document.getElementById("section_1").style.display = 'none';
-						document.getElementById("section_1_bis").style.display = 'block';
-					/*}*/
-				
+				document.getElementById("dictee").value = "";
+				document.getElementById("section_2").style.display = 'none';
+				document.getElementById("section_3").style.display = 'none';
+				document.getElementById("section_4").style.display = 'none';
+				document.getElementById("section_1").style.display = 'none';
+				document.getElementById("section_1_bis").style.display = 'block';
 			break;
 
 			case "Reprendre":
@@ -226,8 +221,8 @@ fetch(donnees)
 			default:
 			alert ( "Aucune action définie !"); // utile surtout pour le débogage
 		}
-		event.preventDefault(); // pour empêcher la soumission effective du formulaire.
-		return false;
+	event.preventDefault();
+	return false;
 	}
 
 	
@@ -262,7 +257,7 @@ fetch(donnees)
 	let items = document.querySelectorAll("menu ul li");
 	
 	// Gestion d'événement : si on clique sur l'icône de menu:
-	icone_menu.addEventListener('mouseup', iconeMenuTapOrClick, false);
+	icone_menu.addEventListener('click', iconeMenuTapOrClick, false);
 	icone_menu.addEventListener('touchend', iconeMenuTapOrClick, false);
 
 	function iconeMenuTapOrClick(event){
