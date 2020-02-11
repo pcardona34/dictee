@@ -32,101 +32,67 @@ Copyright (C) 2012-2019 Patrick CARDONA - Dictee de JDicto
     for the CSS code in this page.    
 */
 
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+/* adaptation des tailles de polices   */
+/* en fonction de la taille de l'écran */
 
-@media (min-width: 600px) {
-
-body {
-	padding:0.5em;
-}
-
-header {
-	margin-left: 1em;
-	margin-right: 1em;
-	padding-left: 1em;
-	padding-right: 1em;
-	border-radius: 10px;
-}
-
-section {
-		margin: 1em;
-		padding-left: 1em;
-}
-
-footer {
-	margin-left: 1em;
-    margin-right: 1em;
-    padding: 0.6em;
-}
-
-}
-
-
-
-@media (max-width: 599) {
+@media screen {
 
 body {
-	margin:0px;
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+	font-size: 100%;
 }
+
+p, #correction, #solution, footer {
+	font-size-adjust: 4vmin;
+	}
+
+textarea {font-size-adjust: 4vmin;}
+
+h1 {font-size: 5vh;}
+
+h2 {font-size: 4vh;}
 
 header {
 	margin: 0px;
-	padding: 1em;
+	padding: 10px;
+	background-color: royalblue;
+	color: whitesmoke;
 }
 
-menu {
-	margin-left: 0px;
-	margin-right: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
+header img {
+    float: left;
 }
 
+nav {
+	margin: 0px;
+	padding: 0px;
 }
-
-/* ********************************* */
-/* En commun à toutes les interfaces */
-/* ********************************* */
-
-header {
-	padding-bottom: 0.5em;
-	color: white;
-	background-color:#5AA2DE;
-	font-family:Arial,Helvetica,Sans-serif; 
-	font-size:1em;
-}
-
+	
 section {
-	/* margin-left:3em; */
 	margin-left:0em;
-	/*margin-right:2em;*/	
-}
-
-aside {
-	margin-left:1em;
-		
 }
 
 footer {
 	margin-top:1em;
 	border-top: solid #CCCCCC 2px;
 	color:#999999;
-	font-size:0.8em;
 	text-align:center;
 	clear: both;
+	font-family: sans-serif;
+	font-size: small
 }
 
 h1, h2 {
-	font-family:Arial,Helvetica,"Sans serif";
-}
-
-h1 {
-	font-size:1.4em;	
+	font-family: sans-serif;
+	margin: 0px;
 }
 
 h2 {
-	color:#5AA2DE;
-	font-size:1em;	
+	margin-top: 10px;
+	margin-left: 10px;
+	color: dimgray;
 }
 
 #titre_principal {
@@ -136,20 +102,25 @@ h2 {
 }
 
 #correction, #solution {
-	font-size:1.6em;
-	padding-top:1.5em;
-	padding-bottom:1.5em;
-	padding-right:1.5em;
+	padding-top:1em;
+	padding-bottom:1em;
+	padding-right:0.5em;
 	padding-left:0.5em;
-	border-top:dotted thick #66CCFF;	
+	border-top:dotted thick dimgray;
+	font-family: sans-serif;
+}
+
+textarea {
+	margin: 10px;
+	border-radius: 10px;
 }
 
 #dictee {
-	box-sizing: border-box;
 	width: 100%;
-	background-color: lightblue;
-	font-family: 'Pacifico', cursive;
-	font-size:1.3em;
+	background-color: dimgray;
+	color: antiquewhite;
+	font-family: inherit;
+	font-size: larger;
 }
 
 del {
@@ -157,7 +128,7 @@ del {
 }
 
 ins {
-	color: #5CB85C; /* vert de Bootstrap */
+	color: #339933; /* vert de Bootstrap */
 	text-decoration: none;
 }
 
@@ -174,13 +145,9 @@ ins {
 		background-color: white;
 }
 
-
-textarea {
-	border-radius: 10px;
-}
-
 #section_1, #section_1_bis {
-	clear:both;	
+	clear:both;
+	margin-right: 20px;
 }
 
 #section_4 {
@@ -210,11 +177,12 @@ textarea {
 }
 
 .bilan {
-	border-top:dotted thick #66CCFF;
-	padding-top: 1.5em;
+	border-top:dotted thick dimgray;
+	padding-top: 1em;
 	text-align: center;
-	font-size: smaller;
-	color : orange;
+	font-size-adjust: inherit;
+	font-weight: bold;
+	color : dimgray;
 }
 
 .bravo {
@@ -228,6 +196,68 @@ textarea {
 #section_1, #section_1_bis {
 	display: none;
 	}
+
+#mentions {
+	padding: 10px;
+	font-family: sans-serif;
+	display: none;
+}
+	
+	footer {
+	margin-left: 1em;
+  margin-right: 1em;
+  padding: 0.6em;
+}
+
+
+
+}
+
+/* ********************************* */
+/* Ordis							               */
+/* ********************************* */
+
+@media screen and (min-width: 600px) {
+
+body {
+	margin: 0px;
+	padding:10px;
+}
+
+header {
+	background-color: #5AA2DE;
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+}
+
+header img {
+	display: none;
+}
+
+nav {
+	display: block;
+	float: left;
+	width: 30%;
+}
+
+main {
+	display: block;
+	float: left;
+	width: 70%;
+}
+
+
+section {
+		margin: 0px;
+		padding: 0.4em;
+}
+	
+	h2 {
+		color:#5AA2DE;
+	}
+
+}
 
 
 

@@ -33,17 +33,36 @@ Copyright (C) 2019 Patrick CARDONA
 */
 
 button, input[type="submit"] {
-	background-color:rgb(92,184,92);
-	color:white;
-	margin-right:0.5em;
-	font-size:1.1em;
-	border-radius: 5px;
+    background-color: whitesmoke;
+    color: dimgray;
+    font-weight: bold;
+    margin-right:0.5em;
+    border-radius: 5px;
     padding: 0.5em;
+    border: solid thin dimgray;
+}
+
+#zone_message button, #zone_message input[type="submit"]{
     border: none;
 }
 
-
-button, input[type="submit"]:hover {
-	cursor:pointer;
-	background:linear-gradient(rgb(92,184,92), #7cc67c);
+@media screen and (min-width: 600px)
+{
+    
+    button, input[type="submit"] {
+    background-color:rgb(92,184,92);
+    color:white;
+    margin-right:0.5em;
+    border-radius: 5px;
+    padding: 0.5em;
+    border: none;
 }
+    
+    button:hover, input[type="submit"]:hover {
+    cursor:pointer;
+    background:linear-gradient(rgb(92,184,92), #7cc67c);
+    font-weight: bold;
+    }
+}
+
+

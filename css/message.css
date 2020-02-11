@@ -1,5 +1,5 @@
 /*
- * menu.css
+ * message.css
  *  
  * ( c ) 2012-2020 Patrick Cardona
  * dictee de JDicto
@@ -32,103 +32,48 @@ Copyright (C) 2012-2020 Patrick CARDONA - Dictee de JDicto
     for the CSS code in this page.    
 */
 
-@media (max-width: 599px) {
+@media screen {
 
-menu img#noir {
-    display: none;
-}
-
-menu img#blanc {
-    margin-left: 0.4em;
-}
-
-menu {
-    display: block;
+#zone_message, #mentions {
+    background-color: dimgray;
+    color: whitesmoke;
+    font-weight: bold;
     margin-left: 0px;
-    padding-left: 10px;
-    float: left;
+    margin-top: 0.5em;
+	padding: 0.4em;
 }
 
-menu ul {
-    position: absolute;
-    margin-left: 0px;
-    padding-left: 0px;
-    background-color: #5AA2DE;
-    width: 90%;    
-    border: thin solid #5AA2DE;
-    float:left;
-}
-
-menu h1 {
-    display: none;
-}
-
-menu ul li {
-    background-color: white;
-}
-
-menu ul li#menu_aide {
-    border-radius: 10px 10px 0px 0px;
-}
-
-menu ul {
-    display: none;
-}
-
-}
-
-@media (min-width: 600px) {
-
-menu img#blanc {
-    display: none;
-}
-
-menu {
-    display: block;
-    margin-left: 0px;
-    margin-right: 2em;
-    padding: 0px;
-}
-
-menu img {
-    float: left;
-    margin-left:0.2em;
-}
-
-menu img:hover {
-    cursor: pointer;
-}
-
-menu h1 {
-    display: block;
-    font-size: 2.1em;
-}
-
-menu ul {
-    clear: both;
-    width: 80%;
-}
-
-menu ul li:hover {
-    background-color: royalblue;
-    color: white;
-    cursor: pointer;
-}
-
-menu ul {
-    display: none;
-}
-
-}
-
-/* En commun */
-
-menu ul li {
-    list-style-type: none;
-    padding: 0.4em;
-    background-color: white;
-    border: thin solid #5AA2DE;
+#message, #cadre_prof {
+    margin: 0.2em;
     font-family: sans-serif;
-    color: #5AA2DE;
+    font-size: 16px;
+    font-size-adjust: 0.6;
+}
+    
+    #zone_message h2, #mentions h2 { color: antiquewhite; font-size-adjust: 0.8 }
+
 }
 
+@media screen and (min-width: 600px) {
+
+#zone_message, #mentions {
+    background-color: whitesmoke;
+    color: dimgray;
+   	margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.4em;
+    border: thick grey dotted;
+}
+    
+    #message, #cadre_prof {
+    margin: 0.6em;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-size-adjust: inherit;
+}
+    
+    #zone_message h2, #mentions h2 { color: #5AA2DE; font-size-adjust: 0.6 }
+
+}
+
+}

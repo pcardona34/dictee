@@ -209,30 +209,39 @@ fetch(donnees)
 	});
 	} // Fin de la boucle for
 	
+	// Bouton de fermeture des mentions légales
+	let bouton_fermeture_mentions = document.getElementById("fermer_bis");
+	bouton_fermeture_mentions.addEventListener('click', function(e){
+		let mentions = document.getElementById("mentions");
+		mentions.style.display = 'none';
+		});
+	
 	// Bouton de fermeture de message
 	let bouton_fermeture = document.getElementById("fermer");
 	bouton_fermeture.addEventListener('click', function(e){
 		let zone_message = document.getElementById("zone_message");
 		zone_message.style.display = 'none';
 		});
+		
 	// Gestion du bouton de menu
-	let items = document.querySelectorAll("menu ul");
-	let menu = document.querySelectorAll("menu img");
-		for ( let j = 0; j < menu.length; j++ ){
-			menu[j].addEventListener('click', function(e){
-				for ( let i = 0; i < items.length; i++ ){
-					items[i].style.display = 'block';
-				}
-			});
-		}
+	let menu = document.getElementById("menu");
+	let icone_menu = document.getElementById("icone_menu");
+	let style = window.getComputedStyle(icone_menu);
+	let items = document.querySelectorAll("menu ul li");
 	
+	// Gestion d'événement : si on clique sur l'icône de menu:
+	icone_menu.addEventListener('click', function(e){
+			menu.style.display = 'block';
+		});
 	
-	// Gestion des items de menu
+	// Gestion des items de menu : si on clique sur un item quelconque
 	for ( let i = 0; i < items.length; i++ ){
-		items[i].addEventListener('click', function(e){
-			for ( let j = 0; j < items.length; j++ ){
-				items[j].style.display = 'none';
-			}	
+			items[i].addEventListener('click', function(e){
+			if ( style.display == 'none' ){
+				menu.style.display = 'block';
+			} else {
+				menu.style.display = 'none';
+			}
 		});
 	}
 	
@@ -252,6 +261,11 @@ fetch(donnees)
 	menu_saisir.addEventListener('click', function(e){
 		document.getElementById("section_1").style.display = 'none';
 		document.getElementById("section_1_bis").style.display = 'block';
+	});
+	
+	menu_mentions = document.getElementById("menu_mentions");
+	menu_mentions.addEventListener('click', function(e){
+		document.getElementById("mentions").style.display = 'block';
 	});
 	
 

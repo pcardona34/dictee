@@ -9,60 +9,71 @@
  *
  */
  -->
-	
+
 	<head>
 		<meta charset="utf-8">
 		<title>Dictée</title>
 		
 		<!-- CSS partagée : dictée -->
-		<link href="css/chargement.css" type="text/css" rel="stylesheet" />
-		<link href="lib/css/carspec.css" type="text/css" rel="stylesheet" />
+		<link href="css/chargement.css" rel="stylesheet" type="text/css" />
+		<link href="css/carspec.css" rel="stylesheet" type="text/css" />
 		<link href="css/dictee.css" rel="stylesheet" type="text/css" />
-		<link href="lib/css/message.css" rel="stylesheet" type="text/css" />
+		<link href="css/message.css" rel="stylesheet" type="text/css" />
 		<link href="css/boutons.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="lib/css/menu.css" />
-		
-		
+		<link href="css/menu.css" rel="stylesheet" type="text/css" />
 	</head>
-	
+
 	<body>
-	
+
 	<!-- Si Javascript n'est pas autorisé ou supporté... -->
 	<noscript>
 		<h1>Erreur !</h1>
 		<p>Votre navigateur ne prend pas en charge l'exécution de scripts. 
 			Veuillez autoriser l'exécution de JavaScript ou employer un navigateur adapté.</p>
 	</noscript>
-	
-	<!-- Corps de l'appli -->	
+
+	<!-- Corps de l'appli -->
 
 <div id="conteneur"><p class="chargement">Veuillez patienter... La dictée se prépare...</p></div>
 
 <!-- Modèle -->
 <template id="modele">
-		<menu>
-		<img id="noir" src="img/menu.png" alt="Menu"/> 
-		<img id="blanc" src="img/blanc.png" alt="Menu mobile" /> 
+
+	<header>
+		<img id="icone_menu" src="img/blanc.png" alt="Menu mobile" /> 
 		<h1 id="titre_app">&nbsp;Dictée</h1>
+		<div>
+			<h2 id="titre_principal"></h1>
+		</div>
+	</header>
+
+	<nav>
+		<menu id="menu">
 			<ul>
 				<li id="menu_aide">Aide</li>
+				<li id="menu_mentions">Mentions légales</li>
 				<li id="menu_ecouter">Écouter la dictée</li>
 				<li id="menu_saisir">Saisir le texte</li>
 			</ul>
 		</menu>
+	</nav>
+
+	<main>
 		
-		<header>
-		<div>
-			<h1 id="titre_principal"></h1>
+	<section>
+		<div id="mentions">
+			<h2>Mentions légales</h2>
+		<p id="cadre_prof">D'après <span id="auteur"></span>, <span id="ouvrage"></span> <br />
+				<span id="prof"></span>
+		</p>
+		<p style="text-align: center"><button id="fermer_bis">Fermer</button></p>
 		</div>
-	</header>
-
-
-
+	</section>
+		
 	<section id="zone_message">
 		<p id="message">
 		D'abord, écoutez bien la dictée, écrivez-la sur une feuille de brouillon. 
-			Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...<br />
+			Puis saisissez-la dans la zone de texte&nbsp;: menu > saisir le texte...
 		</p>
 		<p style="text-align: center"><button id="fermer">Fermer</button></p>
 		
@@ -80,11 +91,9 @@
 		</div>
 		<div id="section_1_bis">
 			<!-- Formulaire de saisie du texte de la dictée -->
-			<h2>Écrire la dictée</h2>		
+			<h2>Écrire la dictée <a href="#" class="aide">?</a></h2>
+
 			<table id="table_spec">
-				<caption>
-					Caractères spéciaux	
-				</caption>
 					<tr>
 					<td class="spec">«</td>
 					<td class="spec">—</td>
@@ -94,13 +103,12 @@
 					<td class="spec">Œ</td>
 					<td class="spec">É</td>
 					<td class="spec">À</td>
-					<td><a href="#" class="aide">?</a></td>
-					</tr>	
+					</tr>
 			</table>
 			<form name="formulaire">
 				
 				<!--<fieldset  id="ecrire">-->
-					<textarea id="dictee" name="dictee" cols="80" rows="7"></textarea>
+					<textarea spellcheck="false" id="dictee" name="dictee" cols="80" rows="7"></textarea>
 				<!--</fieldset>-->
 				<p style="text-align:center">
 				<input type="submit" value="Corriger" />
@@ -110,7 +118,7 @@
 		</div>
 	</section>
 	
-<!-- Annexes -->
+	<!-- Annexes -->
 	<section>
 		<div id="section_2">
 			<h2>Correction</h2>
@@ -130,35 +138,27 @@
 			</form>
 		</div>
 	</section>
-	
+		
+	</main>
+
 	<!-- Pied de page -->	
 	<footer>
 		Dictée réalisée au moyen de <a title="apropos" href="#">JDicto</a> - © 2012-2020 Patrick Cardona.
 		&nbsp;| <a href="#" title="Licence" rel="jslicense">Licence</a>
-		<p id="cadre_prof">Mentions légales : d'après <span id="auteur"></span>, <span id="ouvrage"></span> &nbsp;|&nbsp;
-				<span id="prof"></span>
-		</p>
 	</footer>
-    
-</template>
-	
-	
-	
 
-	
+</template>
+
+
+
 	<!-- Optimisation : le code des lib javascript est chargé en fin de fichier -->
 	<!-- Lib JavaScript génériques ou partagées : dictée + générateur -->
 		<script src="js/navigateur.js"></script>
-		<!-- Lib liées à cette page -->
 		<script src="js/insertion.js"></script>		
 		<script src="js/jsdiff.js"></script>
-		
-		<!-- Scripts partagés -->
-		<script src="lib/js/message.js"></script>
-		<script src="lib/js/apropos.js"></script>
-		<script src="lib/js/lic.js"></script>
-		
-		<!-- Scripts liés à cette page -->
+		<script src="js/message.js"></script>
+		<script src="js/apropos.js"></script>
+		<script src="js/lic.js"></script>
 		<script src="js/dictee.js"></script>
 		<script src="js/interface.js"></script>
 	</body>

@@ -1,5 +1,5 @@
 /*
- * message.css
+ * menu.css
  *  
  * ( c ) 2012-2020 Patrick Cardona
  * dictee de JDicto
@@ -32,34 +32,70 @@ Copyright (C) 2012-2020 Patrick CARDONA - Dictee de JDicto
     for the CSS code in this page.    
 */
 
-@media (max-width: 599px) {
+@media screen {
 
-#zone_message {
+menu {
+    display: block;
+    margin: 0px;
+    margin-top: 4px;
+    padding: 0px;
+}
+
+menu ul {
     margin-left: 0px;
-	padding: 0.4em;
+    padding-left: 0px;
 }
+
+menu {
+    display: none;
+}
+    
+    menu ul li {
+       background-color: darkslateblue;
+       color: whitesmoke;
+       font-weight: bold;
+       border: thick solid whitesmoke;
+    }
 
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 
-#zone_message {
-	margin-left: 1em;
-    margin-right: 1em;
-    padding: 0.4em;
+menu {
+    margin: 0px;
+    padding: 0px;
 }
+
+menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+    
+    menu ul li {
+        background-color: white;
+        border: thin solid #5AA2DE;
+        color: #5AA2DE;
+    }
+
+menu ul li:hover {
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
+    
+    menu {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: block;
+    }
 
 }
 
 /* En commun */
 
-#zone_message {
-	margin-top: 0.5em;
-	font-family: sans-serif;
-	border: thick grey dotted;
-	text-align: center;
+nav menu ul li {
+    list-style-type: none;
+    padding: 0.7em;
+    font-family: sans-serif;
 }
 
-#message {
-    margin: 0.6em;
-}
