@@ -1,3 +1,8 @@
+
+CE LOGICIEL EST CADUC !
+
+Je vous recommande d'envisager sa version évoluée : [ejDicto](https://github.com/pcardona34/ejdicto) 
+
 dictee
 ======
 
